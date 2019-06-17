@@ -11,6 +11,11 @@
 
 set $mod Mod4
 
+# Variables for i3 gaps
+gaps inner 10
+gaps outer 10
+for_window [class="^.*"] border pixel 2
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
@@ -41,7 +46,7 @@ client.background       #ffffff
 #exec --no-startup-id compton #confif file is at ~/.config/compton.conf
 
 #wallpaper
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/bookshelf.jpg
+exec --no-startup-id feh --bg-scale ~/Documents/myShit/default_config/Wallpapers/NYByNight.jpg
 
 #lock screen
 #bindsym $mod+Shift+X exec i3lock -n -f -i /home/romain/Pictures/Wallpapers/bookshelf.png 
@@ -60,6 +65,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 #network manager
 exec nm-applet &
 
+#Bluetooth
+exec blueman-applet &
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -68,13 +76,13 @@ bindsym Print exec gnome-screenshot -i
 
 # start 
 bindsym $mod+Return exec i3-sensible-terminal #a terminal
+bindsym $mod+Shift+Return exec terminator #a terminal
 bindsym $mod+Shift+S exec google-chrome #chrome
-bindsym $mod+Shift+D exec /opt/firefox/firefox #mozilla firefox
+bindsym $mod+Shift+D exec /usr/local/firefox/firefox #mozilla firefox
 bindsym $mod+Shift+F exec nautilus #my file explorer
 
 # kill focused window
 bindsym $mod+Shift+A kill
-
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -203,19 +211,23 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#polybar
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id polybar example
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	position top
-       	#status_command i3status
-	status_command i3blocks
-
-	colors {
-		
-		#<item to modify>  	<border> 	<background> 	<text>	
-		focused_workspace  	#35b225 	#35b225 	#000000
-		active_workspace   	#333333 	#333333 	#888888
-		inactive_workspace 	#CECECE 	#333333 	#f1f1f1
-		urgent_workspace   	#ad0101 	#ad0101 	#ffffff
-	}
-}
+#bar {
+#	position top
+#       	#status_command i3status
+#	#status_command i3blocks
+#
+#	colors {
+#		
+#		#<item to modify>  	<border> 	<background> 	<text>	
+#		focused_workspace  	#35b225 	#35b225 	#000000
+#		active_workspace   	#333333 	#333333 	#888888
+#		inactive_workspace 	#CECECE 	#333333 	#f1f1f1
+#		urgent_workspace   	#ad0101 	#ad0101 	#ffffff
+#	}
+#}
