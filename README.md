@@ -3,10 +3,10 @@
 My configuration is composed of multiple configuration files respectively to be used with these packages:
 
 	- i3
-	- i3blocks
+	- Polybar
 	- Terminator
 	- Vim
-	- Compton
+	- Dunst
 
 ## i3
 
