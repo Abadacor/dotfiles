@@ -1,0 +1,62 @@
+[global_config]
+  tab_position = hidden
+  title_transmit_fg_color = "#2E3440"
+  title_transmit_bg_color = "#88C0D0"
+  title_receive_fg_color = "#2E3440"
+  title_receive_bg_color = "#8FBCBB"
+  title_inactive_fg_color = "#D8DEE9"
+  title_inactive_bg_color = "#4C566A"
+  enabled_plugins = CustomCommandsMenu, InactivityWatch, TestPlugin, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, MavenPluginURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    use_system_font = False
+  [[nord]]
+    background_color = "#2e3440"
+    background_darkness = 0.6
+    background_type = transparent
+    cursor_shape = ibeam
+    cursor_color = "#D8DEE9"
+    font = Ubuntu Mono 13
+    foreground_color = "#d8dee9"
+    show_titlebar = False
+    scrollback_lines = 1000
+    scrollback_infinite = True
+    palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 7f6cafba-671b-4f64-a1be-06abedbe6027
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 0:41
+      size = 956, 1037
+      title = romain@tuxtop: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 516
+      ratio = 0.5
+      type = VPaned
+    [[[terminal2]]]
+      directory = ""
+      order = 0
+      parent = child1
+      profile = nord
+      type = Terminal
+      uuid = b7947ab2-c059-4da8-949a-309eb6ae8594
+    [[[terminal3]]]
+      order = 1
+      parent = child1
+      profile = nord
+      type = Terminal
+      uuid = 7f6cafba-671b-4f64-a1be-06abedbe6027
+[plugins]

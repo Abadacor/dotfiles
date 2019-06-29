@@ -20,21 +20,18 @@ i3 is a window manager, configure it to feel at home on your desktop
 
 	The configuration file is located at: ~/.config/i3/config
 
-## i3blocks
+## Polybar
 
-i3blocks is a package that you can use to customize the "taskbar" of your machine.
+This is the tool I use for my taskbar.
+
 
 ### Installation
-	
-	1. `sudo apt install i3blocks`
-	2. the dependencies are
-		* acpi
-		* fonts-font-awesome
-	3. Replace "status\_command i3status" by this line "status\_command i3blocks" in the bar{} section of your i3 configuration file
+
+	Install it by following the instructions from this git repo: https://github.com/polybar/polybar
 
 ### Configuration file 
 
-	The configuration file is located at: ~/.i3blocks.conf
+	The configuration files are located at: ~/.config/polybar
 
 ## Terminator
 
@@ -61,14 +58,21 @@ i3blocks is a package that you can use to customize the "taskbar" of your machin
 	1. The configuration file is located at ~/.vimrc
 	2. The colors folders containing the color themes is located at ~/.vim/colors/
 
-## Compton
+## Dunst
 
-	Compton is a composition manager. Honestly I only use it if I want to add transparency to my Terminator.
+	Dunst is a notifications manager, highly customizable.
 
 ### Installation
 
-	1. `sudo apt install compton`
+	1. Install these dependencies (for Ubuntu): `sudo apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk2.0-dev libxdg-basedir-dev`
+	2. Then Follow these steps:
+		1. git clone https://github.com/dunst-project/dunst.git
+		2. cd dunst
+		3. make -j5
+		4. sudo make install
 
-### Configuration file 
+	3. If you need further information, find it here: https://linuxconfig.org/get-better-notifications-in-your-wm-with-dunst
 
-	The configuration file is located at ~/.config/compton.conf
+### Configuration file
+
+	The configuration file is located at ~/.config/dunstrc
