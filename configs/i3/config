@@ -45,6 +45,9 @@ client.background       #ffffff
 #transparency
 #exec --no-startup-id compton #confif file is at ~/.config/compton.conf
 
+#redshift - config file is at ~/.config/redshift/redshift.conf
+exec --no-startup-id redshift
+
 #wallpaper
 exec --no-startup-id feh --bg-scale ~/Documents/myShit/default_config/Wallpapers/NYByNight.jpg
 
