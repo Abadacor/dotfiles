@@ -7,6 +7,7 @@ My configuration is composed of multiple configuration files respectively to be 
 	- Terminator
 	- Vim
 	- Dunst
+	- Redshift
 
 ## i3
 
@@ -76,3 +77,15 @@ This is the tool I use for my taskbar.
 ### Configuration file
 
 	The configuration file is located at ~/.config/dunstrc
+	
+## Redshift
+	
+	Redshift is a blue light filter package.
+	
+### Installation 
+
+	1. `sudo apt install redshift`
+	
+### Configuration
+
+	No configuration is needed, but check the official documentation if you want to select your geographical zone manually for example.
