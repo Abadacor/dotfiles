@@ -89,3 +89,39 @@ This is the tool I use for my taskbar.
 ### Configuration
 
 	No configuration is needed, but check the official documentation if you want to select your geographical zone manually for example.
+
+## Rofi
+
+	A replacement to Dmenu!
+
+### Installation 
+	
+	1. `sudo apt install rofi`
+
+### Configuration file
+
+	The configuration file for rofi is located at /etc/rofi.conf
+
+## Compton
+	
+	It is a composer. I use it for the transparency like everyone else.
+
+### Installation
+
+	1. `sudo apt install compton`
+
+### Configuration file
+
+	The configuration file is located at ~/.config/compton.conf
+
+## BetterLockScreen
+
+	Better version of i3lock & i3lock-color
+
+### Installation
+
+	Install i3lock & i3lock-color and all their dependencies.
+
+### Configuration
+
+	Configuration can be found in the package's Github.
