@@ -43,18 +43,21 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 #transparency
-#exec --no-startup-id compton #confif file is at ~/.config/compton.conf
+exec --no-startup-id compton #config file is at ~/.config/compton.conf
 
 #redshift - config file is at ~/.config/redshift/redshift.conf
 exec --no-startup-id redshift
 
 #wallpaper
-exec --no-startup-id feh --bg-scale ~/Documents/myShit/default_config/Wallpapers/NYByNight.jpg
+exec --no-startup-id feh --randomize --bg-scale ~/Documents/myShit/default_config/Wallpapers/* &
 
 #lock screen
 #bindsym $mod+Shift+X exec i3lock -n -f -i /home/romain/Pictures/Wallpapers/bookshelf.png 
-bindsym $mod+Shift+X exec /home/romain/Documents/myShit/default_config/scripts/blurLock.sh
+bindsym $mod+Shift+X exec betterlockscreen -l dim -t "The cake is a lie"
 exec --no-startup-id xss-lock -- /home/romain/Documents/myShit/default_config/scripts/lurLock.sh 
+
+#Battery low
+exec --no-startup-id /home/romain/Documents/myShit/default_config/scripts/batteryLow.sh
 
 #light
 bindsym XF86MonBrightnessUp exec xbacklight +10 # increase screen brightness
