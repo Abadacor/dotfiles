@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BATTINFO=`acpi -b`
-if [[ `echo $BATTINFO | cut -f 5 -d " "` < 00:15:00 ]] ; then
-    DISPLAY=:0.0 /usr/bin/notify-send -u critical "low battery" "$BATTINFO"
-fi
+pow=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP "percentage:.*\K(\d{2})%"` 
+
+if [ "${pow//%}" \< 40 ] ; then 
+    echo `/usr/bin/notify-send -u critical "low battery"`
+fi	
