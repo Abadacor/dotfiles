@@ -49,16 +49,16 @@ exec --no-startup-id compton #config file is at ~/.config/compton.conf
 exec --no-startup-id redshift
 
 #wallpaper
-exec --no-startup-id feh --randomize --bg-scale ~/Documents/myShit/default_config/Wallpapers/* &
+exec --no-startup-id feh --randomize --bg-scale /home/soulo/Documents/myShit/default_config/dotfiles/Wallpapers/* &
 
 #lock screen
-#bindsym $mod+Shift+X exec i3lock -n -f -i /home/romain/Pictures/Wallpapers/bookshelf.png 
+bindsym $mod+Shift+X exec i3lock
 #bindsym $mod+Shift+X exec betterlockscreen -l dim -t "The cake is a lie"
-bindsym $mod+Shift+X exec betterlockscreen -l dim -t `shuf -n 1 /home/romain/Documents/myShit/default_config/quotes.txt`
-exec --no-startup-id xss-lock -- /home/romain/Documents/myShit/default_config/scripts/lurLock.sh 
+#bindsym $mod+Shift+X exec betterlockscreen -l dim -t `shuf -n 1 /home/romain/Documents/myShit/default_config/dotfiles/quotes.txt`
+#exec --no-startup-id xss-lock -- /home/romain/Documents/myShit/default_config/dotfiles/scripts/blurLock.sh 
 
 #Battery low
-exec --no-startup-id /home/romain/Documents/myShit/default_config/scripts/batteryLow.sh
+exec --no-startup-id /home/romain/Documents/myShit/default_config/dotfiles/scripts/batteryLow.sh
 
 #light
 bindsym XF86MonBrightnessUp exec xbacklight +10 # increase screen brightness
