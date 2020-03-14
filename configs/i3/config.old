@@ -43,19 +43,19 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 #transparency
-#exec --no-startup-id compton #config file is at ~/.config/compton.conf
+exec --no-startup-id compton #config file is at ~/.config/compton.conf
 
 #redshift - config file is at ~/.config/redshift/redshift.conf
-#it needs gnome-maps as a dependency to be functional (at least on my ubuntu)
-exec --no-startup id redshift -l geoclue2 -t 5000:2500
+exec --no-startup-id redshift
 
 #wallpaper
-exec --no-startup-id feh --randomize --bg-scale ~/Documents/myShit/default_config/dotfiles/Wallpapers/* &
+exec --no-startup-id feh --randomize --bg-scale /home/soulo/Documents/myShit/default_config/dotfiles/Wallpapers/* &
 
 #lock screen
-bindsym $mod+x exec betterlockscreen -l dim -w /home/soulo/Documents/myShit/default_config/dotfiles/Wallpapers/soloLevelingEyes.jpg -t "The cake is a lie"
-bindsym $mod+shift+X exec betterlockscreen -s dim -w /home/soulo/Documents/myShit/default_config/dotfiles/Wallpapers/soloLevelingEyes.jpg -t "The cake is a lie"
-
+bindsym $mod+Shift+X exec i3lock
+#bindsym $mod+Shift+X exec betterlockscreen -l dim -t "The cake is a lie"
+#bindsym $mod+Shift+X exec betterlockscreen -l dim -t `shuf -n 1 /home/romain/Documents/myShit/default_config/dotfiles/quotes.txt`
+#exec --no-startup-id xss-lock -- /home/romain/Documents/myShit/default_config/dotfiles/scripts/blurLock.sh 
 
 #Battery low
 exec --no-startup-id /home/romain/Documents/myShit/default_config/dotfiles/scripts/batteryLow.sh
@@ -65,11 +65,9 @@ bindsym XF86MonBrightnessUp exec xbacklight +10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -10 # decrease screen brightness
 
 #Sound -- pulse
-#bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 5+ unmute"
-#bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5- unmute" 
-bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 5+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5- unmute" 
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 
 #network manager
 exec nm-applet &
@@ -88,17 +86,19 @@ bindsym Print exec gnome-screenshot -i
 bindsym $mod+Return exec terminator #a terminal
 bindsym $mod+Shift+Return exec terminator #a terminal
 bindsym $mod+Shift+S exec google-chrome #chrome
-bindsym $mod+Shift+D exec /usr/bin/firefox #mozilla firefox
+bindsym $mod+Shift+D exec /usr/local/firefox/firefox #mozilla firefox
 bindsym $mod+Shift+F exec nautilus #my file explorer
+bindsym $mod+p exec /home/romain/.config/polybar/playerctl_playpause.sh
 
 # kill focused window
 bindsym $mod+Shift+A kill
-
-# start rofi
-bindsym $mod+d exec rofi -show run
-
-# pause dunst notifications
-bindsym $mod+w exec /home/soulo/Documents/myShit/default_config/dotfiles/scripts/doNotDisturb.sh
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 # change focus
 bindsym $mod+j focus left
@@ -186,13 +186,6 @@ bindsym $mod+Shift+egrave move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+ccedilla move container to workspace $ws9
 bindsym $mod+Shift+agrave move container to workspace $ws10
-
-#go to next/previous workspace
-#bindsym $mod+Shift+Q workspace prev
-#bindsym $mod+Shift+S workspace next
-#bindsym $mod+Shift+Left workspace prev_on_output
-#bindsym $mod+Shift+Right workspace next_on_output
-bindsym $mod+Tab workspace back_and_forth
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
